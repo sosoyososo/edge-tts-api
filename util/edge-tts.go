@@ -48,6 +48,7 @@ func (v *Voice) GenerateVoice(text string, rate string) (*GenerateVoiceInfo, err
 		"--voice", v.NameParameter(),
 		"--write-media", filename+".mp3",
 		"--write-subtitles", filename+".vtt",
+		"--proxy", "http://127.0.0.1:1082",
 	)
 	if rate != "" {
 		cmd.Args = append(cmd.Args, "--rate="+rate)
